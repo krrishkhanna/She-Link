@@ -74,3 +74,79 @@ Before running the project locally, ensure you have the following installed:
 ### Installation
 
 1. Clone the repository:
+  git clone https://github.com/lostboysrtk/SheLink.git
+  cd SheLink
+2. Install dependencies:
+
+---
+
+### Environment Setup
+
+1. Create a `.env.local` file in the root directory with the following variables:
+Supabase Configuration
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+Azure Web PubSub Configuration
+NEXT_PUBLIC_AZURE_WEBPUBSUB_CONNECTION_STRING=Endpoint=https://chatroom.webpubsub.azure.com;AccessKey=3AAAAAWPSNyxo;Version=1.0;
+NEXT_PUBLIC_AZURE_WEBPUBSUB_HUB=chat
+
+Azure Face API Configuration
+NEXT_PUBLIC_AZURE_FACE_API_KEY=your_face_api_key
+NEXT_PUBLIC_AZURE_FACE_API_ENDPOINT=https://chatroom.webpubsub.azure.com/
+
+2. Set up Supabase tables:
+- Run the SQL scripts provided in the `supabase` folder to create necessary tables (`profiles`, `chats`, `messages`).
+- Enable Row-Level Security (RLS) policies.
+- Configure real-time subscriptions for `messages`.
+
+3. Start the development server:
+npm run dev
+or if using pnpm
+pnpm dev
+
+
+4. Open your browser and navigate to `http://localhost:3000`.
+
+---
+
+## Scripts
+
+Here are some useful scripts to manage the project:
+
+| Command                | Description                                  |
+|------------------------|----------------------------------------------|
+| `npm run dev`          | Starts the development server               |
+| `npm run build`        | Builds the project for production           |
+| `npm run start`        | Starts the production server                |
+| `npm run lint`         | Runs ESLint to check for code issues        |
+| `npm run format`       | Formats code using Prettier                 |
+
+---
+
+## Project Structure
+
+
+---
+
+## Usage
+
+1. Sign in or sign up using your email.
+2. Set up your profile with a username and avatar.
+3. Join chatrooms powered by Azure Web PubSub.
+4. Send messages in real-time to other users in the chatroom.
+5. Participate in forums and discussions.
+6. Manage privacy settings and customize your experience.
+
+---
+
+## Contributing
+
+We welcome contributions to SheLink! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to your branch (`git push origin feature/new-feature`).
+5. Open a pull request.
+
